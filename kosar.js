@@ -2,112 +2,111 @@ const products = [
     {
         "id": 1,
         "name": "Laptop",
-        "img": '<li><img src="img/laptop.png"/></li>',
+        "img": 'img/laptop.png',
         "description": "14 inches, 8GB RAM, 256GB SSD",
         "price": 299.99,
         "category": "Electronics",
         "in_stock": true
-
-      },
-      {
+    },
+    {
         "id": 2,
         "name": "Headphones",
-        "img": '<li><img src="img/headphones.jpg"/></li>',
+        "img": 'img/headphones.jpg',
         "description": "Noise-cancelling wireless headphones",
         "price": 79.99,
         "category": "Accessories",
         "in_stock": true
-      },
-      {
+    },
+    {
         "id": 3,
         "name": "Desk Lamp",
-        "img": '<li><img src="img/desklamp.jpg"/></li>',
+        "img": 'img/desklamp.jpg',
         "description": "LED desk lamp with adjustable brightness",
         "price": 19.99,
         "category": "Home",
         "in_stock": false
-      },
-      {
+    },
+    {
         "id": 4,
         "name": "Smartphone",
-        "img": '<li><img src="img/smartphone.jpg"/></li>',
+        "img": 'img/smartphone.jpg',
         "description": "6.5 inch display, 128GB storage, dual camera",
         "price": 499.99,
         "category": "Electronics",
         "in_stock": true
-      },
-      {
+    },
+    {
         "id": 5,
         "name": "Gaming Mouse",
-        "img": '<li><img src="img/gamingmouse.jpg"/></li>',
+        "img": 'img/gamingmouse.jpg',
         "description": "Ergonomic gaming mouse with RGB lighting",
         "price": 39.99,
         "category": "Accessories",
         "in_stock": true
-      },
-      {
+    },
+    {
         "id": 6,
         "name": "Bluetooth Speaker",
-        "img": '<li><img src="img/bluetoothspeaker.jpg"/></li>',
+        "img": 'img/bluetoothspeaker.jpg',
         "description": "Portable speaker with 12-hour battery life",
         "price": 59.99,
         "category": "Electronics",
         "in_stock": true
-      },
-      {
+    },
+    {
         "id": 7,
         "name": "Backpack",
-        "img": '<li><img src="img/backpack.jpg"/></li>',
+        "img": 'img/backpack.jpg',
         "description": "Waterproof backpack with multiple compartments",
         "price": 49.99,
         "category": "Accessories",
         "in_stock": true
-      },
-      {
+    },
+    {
         "id": 8,
         "name": "Office Chair",
-        "img": '<li><img src="img/officechair.jpg"/></li>',
+        "img": 'img/officechair.jpg',
         "description": "Ergonomic chair with lumbar support",
         "price": 129.99,
         "category": "Furniture",
         "in_stock": false
-      },
-      {
+    },
+    {
         "id": 9,
         "name": "Keyboard",
-        "img": '<li><img src="img/keyboard.jpg"/></li>',
+        "img": 'img/keyboard.jpg',
         "description": "Mechanical keyboard with customizable keys",
         "price": 69.99,
         "category": "Accessories",
         "in_stock": true
-      },
-      {
+    },
+    {
         "id": 10,
         "name": "Smartwatch",
-        "img": '<li><img src="img/smartwatch.jpg"/></li>',
+        "img": 'img/smartwatch.jpg',
         "description": "Fitness tracking and notifications",
         "price": 199.99,
         "category": "Electronics",
         "in_stock": true
-      },
-      {
+    },
+    {
         "id": 11,
         "name": "Coffee Maker",
-        "img": '<li><img src="img/coffeemaker.jpg"/></li>',
+        "img": 'img/coffeemaker.jpg',
         "description": "Programmable coffee maker with timer",
         "price": 89.99,
         "category": "Home",
         "in_stock": false
-      },
-      {
+    },
+    {
         "id": 12,
         "name": "Yoga Mat",
-        "img": '<li><img src="img/yogamat.jpg"/></li>',
+        "img": 'img/yogamat.jpg',
         "description": "Non-slip yoga mat for fitness exercises",
         "price": 29.99,
         "category": "Fitness",
         "in_stock": true
-      }
+    }
 ];
 
 class Cart {
@@ -185,14 +184,13 @@ function renderProducts() {
 
     products.forEach(item => {
         const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
         productDiv.innerHTML = `
-            <div>
-                
-                ${item.name} 
-                ${item.img}
-                ${item.price}$
-                <button onclick="addToCart(${item.id})">Kosárba</button>
-            </div>
+            <img src="${item.img}" alt="${item.name}"/>
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <p>${item.price} Ft</p>
+            <button onclick="addToCart(${item.id})">Kosárba</button>
         `;
         termekekDiv.appendChild(productDiv);
     });
